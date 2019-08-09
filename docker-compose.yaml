@@ -1,0 +1,28 @@
+version: "3.6"
+
+services:
+
+  gcp-scaffold-svc:
+    image: sixeyed/app-template-gcp-gcp-svc
+    build:
+      context: ./services/gcp
+
+  gke-scaffold-svc:
+    image: sixeyed/app-template-gcp-gke-svc
+    build:
+      context: ./services/gke
+
+  redis-master-scaffold-svc:
+    image: sixeyed/app-template-gcp-redis-master-svc
+    build:
+      context: ./services/redis-master
+
+  redis-slave-scaffold-svc:
+    image: sixeyed/app-template-gcp-redis-slave-svc
+    build:
+      context: ./services/redis-slave
+
+  guestbook-php-scaffold-svc:
+    image: sixeyed/app-template-gcp-guestbook-php-svc
+    build:
+      context: ./services/guestbook-php
