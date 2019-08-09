@@ -124,19 +124,19 @@ templates:
   spec:
     description: Guestbook sample app running on GKE
     services:
-    - name: Google Cloud Platform
+    - name: gcp
       serviceId: gcp
       parameters:
         zone: us-central1-a
-    - name: Google Kubernetes Engine
+    - name: gke
       serviceId: gke
       parameters:
         kubeVersion: 1.13.7-gke.8
         nodeCount: 2
-    - name: Redis Master
+    - name: redis-master
       serviceId: redis-master 
-    - name: Redis Slave
+    - name: redis-slave
       serviceId: redis-slave 
-    - name: Guestbook (PHP)
+    - name: guestbook-php
       serviceId: guestbook-php
     title: Guestbook sample app running on GKE

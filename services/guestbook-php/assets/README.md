@@ -22,7 +22,11 @@ You should see something like this:
 
 ## Check the Code
 
-There's not much to it. The Angular front end is in [controller.js](./controller.js) and the PHP back end is in [guestbook.php](./guestbook.php). 
+There's not much to it:
+
+- the hompage is in [index.html](./index.html)
+- the Angular front end is in [controllers.js](./controllers.js) 
+- the PHP back end is in [guestbook.php](./guestbook.php)
 
 You can edit those files and click _Restart_ in Application Designer to update your app.
 
@@ -58,7 +62,7 @@ kubectl get svc guestbook-php-published --watch
 
 > Browse to the external IP on port 8080 and you'll see the app running
 
-You can also browse to [Google Cloud Console](https://console.cloud.google.com/kubernetes/list?project={{range .Services}}{{if eq "gcp" .ID}}{{.Parameters.project}}{{end}}{{end}}) too see the [workloads](console.cloud.google.com/kubernetes/workload?project={{range .Services}}{{if eq "gcp" .ID}}{{.Parameters.project}}{{end}}{{end}}) and [services](https://console.cloud.google.com/kubernetes/discovery?project={{range .Services}}{{if eq "gcp" .ID}}{{.Parameters.project}}{{end}}{{end}}) that have been deployed.
+You can also browse to [Google Cloud Console](https://console.cloud.google.com/kubernetes/list?project={{range .Services}}{{if eq "gcp" .ID}}{{.Parameters.project}}{{end}}{{end}}) to see the [workloads](https://console.cloud.google.com/kubernetes/workload?project={{range .Services}}{{if eq "gcp" .ID}}{{.Parameters.project}}{{end}}{{end}}) and [services](https://console.cloud.google.com/kubernetes/discovery?project={{range .Services}}{{if eq "gcp" .ID}}{{.Parameters.project}}{{end}}{{end}}) that have been deployed.
 
 ### Credits
 
