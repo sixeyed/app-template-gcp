@@ -12,15 +12,15 @@ services:
     build:
       context: ./services/gke
 
-  redis-master-scaffold-svc:
-    image: sixeyed/app-template-gcp-redis-master-svc
+  redis-leader-scaffold-svc:
+    image: sixeyed/app-template-gcp-redis-leader-svc
     build:
-      context: ./services/redis-master
+      context: ./services/redis-leader
 
-  redis-slave-scaffold-svc:
-    image: sixeyed/app-template-gcp-redis-slave-svc
+  redis-follower-scaffold-svc:
+    image: sixeyed/app-template-gcp-redis-follower-svc
     build:
-      context: ./services/redis-slave
+      context: ./services/redis-follower
 
   guestbook-php-scaffold-svc:
     image: sixeyed/app-template-gcp-guestbook-php-svc
