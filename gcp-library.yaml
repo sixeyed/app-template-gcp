@@ -13,7 +13,7 @@ services:
     icon: https://raw.githubusercontent.com/sixeyed/app-template-gcp/master/img/gcp.png
     source:
       image: sixeyed/app-template-gcp-gcp-svc
-    title: GCP 
+    title: GCP
     parameters:
     - name: project
       description: Project
@@ -67,26 +67,26 @@ services:
 - apiVersion: v1alpha1
   kind: ServiceTemplate
   metadata:
-    name: redis-master
+    name: redis-leader
     platforms:
       - linux
   spec:
     description: An in-memory data structure store
-    icon: https://raw.githubusercontent.com/sixeyed/app-template-gcp/master/img/redis-master.png
+    icon: https://raw.githubusercontent.com/sixeyed/app-template-gcp/master/img/redis-leader.png
     source:
-      image: sixeyed/app-template-gcp-redis-master-svc
+      image: sixeyed/app-template-gcp-redis-leader-svc
     title: Redis Master
 - apiVersion: v1alpha1
   kind: ServiceTemplate
   metadata:
-    name: redis-slave
+    name: redis-follower
     platforms:
       - linux
   spec:
-    description: Redis replicated slaves
-    icon: https://raw.githubusercontent.com/sixeyed/app-template-gcp/master/img/redis-slave.png
+    description: Redis replicated followers
+    icon: https://raw.githubusercontent.com/sixeyed/app-template-gcp/master/img/redis-follower.png
     source:
-      image: sixeyed/app-template-gcp-redis-slave-svc
+      image: sixeyed/app-template-gcp-redis-follower-svc
     title: Redis Slave
     parameters:
     - name: replicas
@@ -108,7 +108,7 @@ services:
     parameters:
     - name: externalPort
       defaultValue: "8080"
-      description: External port      
+      description: External port
       type: hostPort
     - name: replicas
       description: Replicas
@@ -133,10 +133,10 @@ templates:
       parameters:
         kubeVersion: 1.13.7-gke.8
         nodeCount: 2
-    - name: redis-master
-      serviceId: redis-master 
-    - name: redis-slave
-      serviceId: redis-slave 
+    - name: redis-leader
+      serviceId: redis-leader
+    - name: redis-follower
+      serviceId: redis-follower
     - name: guestbook-php
       serviceId: guestbook-php
     title: Guestbook sample app running on GKE
